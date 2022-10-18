@@ -1,0 +1,24 @@
+#+TITLE: RAID
+
+* Definition
+RAID stands for either Redundant Array of Independent Disks, or Redundant Array of Inexpensive Disks.
+The general consensus is that "Independent" came first, and "Inexpensive" followed.
+The intention of RAID is to spread your data across several disks, such that a single disk failure will not lose that data.
+
+** RAID is
+The intention of RAID is to spread your data across several disks, such that a single disk failure will not lose that data
+
+** RAID is not
+a substitue for decent backups and a proper monitoring regime. Not all modern RAID layouts will protect you against
+even a single disk failure, and with today's large drives, failures often cascade from one drive to another.
+Especially if you buy "inexpensive" disks, which are often not suitable for use in a RAID. 
+
+** Why RAID?
+- Some forms of RAID allow you to combine disks together to increase the apparent contiguous size.
+- Some forms of RAID store multiple copies of the data, so if you lose a disk, you have an identical copy elsewhere.
+- Because storing multiple copies can be very wasteful of space, other forms of raid store parity along with the data,
+  so that if a drive fails, the contents of that drive can be calculated from the other drives. 
+
+*** Reference:
++ [[eww:https://raid.wiki.kernel.org/index.php/What_is_RAID_and_why_should_you_want_it%3F][RAID kernel wiki]]
+  

@@ -1,0 +1,55 @@
+#+TITLE: FHS
+
+* Definition
+FHS stands for FilesystemHierarchyStandard, it defines the directory structure and directory contents in Linux distributions.
+
+* Purpose
+This standard enables:
+
+    + Software to predict the location of installed files and directories, and
+    + Users to predict the location of installed files and directories.
+
+We do this by:
+
+    + Specifying guiding principles for each area of the filesystem,
+    + Specifying the minimum files and directories required,
+    + Enumerating exceptions to the principles, and
+    + Enumerating specific cases where there has been historical conflict.
+
+The FHS document is used by:
+
+    + Independent software suppliers to create applications which are FHS compliant, and work with distributions which are FHS compliant,
+    + OS creators to provide systems which are FHS compliant, and
+    + Users to understand and maintain the FHS compliance of a system.
+
+The FHS document has a limited scope:
+
+    + Local placement of local files is a local issue, so FHS does not attempt to usurp system administrators.
+    + FHS addresses issues where file placements need to be coordinated between multiple parties such as local sites, distributions, applications, documentation, etc.
+
+* Convetions
++  Components of filenames that vary are represented by a description of the contents enclosed in "<" and ">" characters, <thus>.
+  Electronic mail addresses are also enclosed in "<" and ">" but are shown in the usual typeface.
+  
++  Optional components of filenames are enclosed in "[" and "]" characters and may be combined with the "<" and ">" convention.
+  For example, if a filename is allowed to occur either with or without an extension, it might be represented by <filename>[.<extension>]
+  .
++  Variable substrings of directory names and filenames are indicated by "*".
+  
++  The sections of the text marked as Rationale are explanatory and are non-normative.
+
+
+* Filesystem
+"Shareable" files are those that can be stored on one host and used on others. "Unshareable" files are those that are not shareable.
+For example, the files in user home directories are shareable whereas device lock files are not.
+
+"Static" files include binaries, libraries, documentation files and other files that do not change without system administrator intervention.
+"Variable" files are files that are not static.
+
+|          | Shareable       | Unshareable |
+| static   | /usr            | /etc        |
+|          | /opt            | boot        |
+| variable | /var/mail       | /var/run    |
+|          | /var/spool/news | /var/lock   |
+
+next: [[file:./fhs-linux-root-filesystem.org][root filesystem]]

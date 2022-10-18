@@ -1,0 +1,20 @@
+#+TITLE: FUSE
+
+* Definition
+FUSE stands for Filesystem in Userspace
+  a filesystem in which data and metadata are provided by an ordinary  userspace process.
+  The filesystem can be accessed normally through the kernel interface.
+
+
+Filesystem in USErspace (FUSE) is a software interface for Unix and Unix-like computer operating systems that lets non-privileged users create their own file systems
+without editing kernel code. This is achieved by running file system code in user space while the FUSE module provides only a bridge to the actual kernel interfaces.
+
+* What is FUSE?
+FUSE is a userspace filesystem framework. It consists of a kernel module (fuse.ko), a userspace library (libfuse.*) and a mount utility (fusermount).
+
+One of the most important features of FUSE is allowing secure, non-privileged mounts. This opens up new possibilities for the use of filesystems.
+A good example is sshfs: a secure network filesystem using the sftp protocol.
+
+*** Reference
++ [[https://www.kernel.org/doc/html/latest/filesystems/fuse.html][FUSE kernel wiki]]
++ [[https://en.wikipedia.org/wiki/Filesystem_in_Userspace][FUSE Wikipedia]]
